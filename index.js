@@ -8,7 +8,7 @@ contador = 0;
 app.get('/clientes', (req, res) => {
     res.send(clientes)
 });
-app.put('/clientes', (req, res) => {
+app.post('/clientes', (req, res) => {
     contador++
     const { nome, endereco, idade } = req.body;
     clientes[contador] = {
@@ -19,6 +19,14 @@ app.put('/clientes', (req, res) => {
     }
     res.status(201).send(clientes[contador]);
 });
+// app.put('/clientes', (req, res) => {
+
+// });
+
+// app.delete('/clientes', (req, res) => {
+
+// });
+
 app.listen(4000, () => {
     console.log('Porta 4000: clientes');
 });
